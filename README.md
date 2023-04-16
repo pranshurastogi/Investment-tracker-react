@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Investment Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An investment tracking application that allows users to add their investments and monitor their portfolio. The app fetches 
+stock data from the Alpha Vantage API and displays the user's total investments over time.
 
-## Available Scripts
+## Project Structure
 
-In the project directory, you can run:
+investment-tracker/
+├─ frontend/ (React.js application)
+│ ├─ public/
+│ ├─ src/
+│ │ ├─ components/
+│ │ │ ├─ AddInvestment.js
+│ │ │ ├─ Portfolio.js
+│ │ │ ├─ TotalInvestmentChart.js
+│ │ │ ├─ Header.js (assuming it's implemented)
+│ │ │ └─ Footer.js (assuming it's implemented)
+│ │ ├─ App.js
+│ │ └─ index.js
+│ ├─ package.json
+│ └─ README.md (frontend-specific README, if needed)
+└─ backend/ (Node.js/Express.js application)
+├─ stockAPI.js
+├─ app.js
+├─ package.json
+└─ README.md 
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Setup and Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Frontend
 
-### `npm test`
+1. Navigate to the `frontend` folder in your terminal:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+cd investment-tracker/frontend
 
-### `npm run build`
+2. Install the necessary dependencies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Start the development server:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+npm start
 
-### `npm run eject`
+The frontend app will run on http://localhost:3000 by default.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Backend
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Navigate to the backend folder in your terminal:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+`cd investment-tracker/backend`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Install the necessary dependencies:
 
-## Learn More
+`npm install`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Add your Alpha Vantage API key to the stockAPI.js file:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+`const apiKey = 'your_api_key_here';`
 
-### Code Splitting
+Replace 'your_api_key_here' with your actual Alpha Vantage API key.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. Start the development server:
 
-### Analyzing the Bundle Size
+npm run start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The backend server will run on http://localhost:3001 by default.
 
-### Making a Progressive Web App
+## Customization
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+To customize the application according to your requirements, you may need to modify the following:
 
-### Advanced Configuration
+1.Frontend components, located in frontend/src/components/.
+2.Backend API routes and stock data fetching, located in backend/app.js and backend/stockAPI.js.
+3.Database setup and connection, which should be implemented in the backend folder according to your choice of database and 
+ORM.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Replace 'mongodb://localhost:27017/investment-tracker' with the connection string for your MongoDB instance.
