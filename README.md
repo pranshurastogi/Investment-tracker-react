@@ -4,7 +4,7 @@ An investment tracking application that allows users to add their investments an
 stock data from the Alpha Vantage API and displays the user's total investments over time.
 
 ## Project Structure
-
+```
 investment-tracker/
 ├─ frontend/ (React.js application)
 │ ├─ public/
@@ -25,7 +25,7 @@ investment-tracker/
 ├─ package.json
 └─ README.md 
 
-
+```
 ## Setup and Installation
 
 ### Frontend
